@@ -149,7 +149,8 @@ class _NewAccountScreenState extends State<NewAccountScreen> {
 
   Future<void> addAccount(String name, String category, double balance) async {
     final account = Account(name: name, category: category, balance: balance);
-    final box = Boxes.getAccounts();
+    final box = await Boxes
+        .getAccounts(); // Await to get the actual Box<Account> object
     box.add(account);
   }
 }

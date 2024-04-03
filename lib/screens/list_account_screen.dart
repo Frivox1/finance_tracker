@@ -41,7 +41,7 @@ class _ListOfAccountsScreenState extends State<ListOfAccountsScreen> {
           ? const Center(
               child: Text(
                 'No accounts available',
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 24),
               ),
             )
           : DataTable(
@@ -50,7 +50,8 @@ class _ListOfAccountsScreenState extends State<ListOfAccountsScreen> {
                   label: Expanded(
                     child: Text(
                       'Name',
-                      style: TextStyle(fontStyle: FontStyle.italic),
+                      style:
+                          TextStyle(fontStyle: FontStyle.italic, fontSize: 18),
                     ),
                   ),
                 ),
@@ -58,7 +59,8 @@ class _ListOfAccountsScreenState extends State<ListOfAccountsScreen> {
                   label: Expanded(
                     child: Text(
                       'Type',
-                      style: TextStyle(fontStyle: FontStyle.italic),
+                      style:
+                          TextStyle(fontStyle: FontStyle.italic, fontSize: 18),
                     ),
                   ),
                 ),
@@ -66,7 +68,8 @@ class _ListOfAccountsScreenState extends State<ListOfAccountsScreen> {
                   label: Expanded(
                     child: Text(
                       'Balance',
-                      style: TextStyle(fontStyle: FontStyle.italic),
+                      style:
+                          TextStyle(fontStyle: FontStyle.italic, fontSize: 18),
                     ),
                   ),
                 ),
@@ -79,7 +82,8 @@ class _ListOfAccountsScreenState extends State<ListOfAccountsScreen> {
                   cells: <DataCell>[
                     DataCell(Text(account.name)),
                     DataCell(Text(account.category)),
-                    DataCell(Text(account.balance.toString())),
+                    DataCell(Text(account.balance.toStringAsFixed(
+                        2))), // Display balance with 2 decimal places
                     DataCell(
                       IconButton(
                         icon: const Icon(Icons.delete),
